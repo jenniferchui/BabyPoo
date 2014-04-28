@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.babypoo.PoopChart$PlaceholderFragment" >
+
+    
+         <TextView
+             android:id="@+id/textView1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentTop="true"
+             android:layout_centerHorizontal="true"
+             android:layout_marginTop="30dp"
+             android:text="@string/which_poop" />
+         
+         <ImageButton
+             android:id="@+id/abnormal2"
+             android:layout_width="100dp"
+             android:layout_height="100dp"
+             android:layout_above="@+id/normal1"
+             android:layout_toLeftOf="@+id/noraml2"
+             android:onClick="showUnhealthyPoop"
+             android:src="@drawable/abnormal2" />
+
+         <ImageButton
+             android:id="@+id/noraml3"
+             android:layout_width="100dp"
+             android:layout_height="100dp"
+             android:layout_above="@+id/abnormal3"
+             android:layout_alignLeft="@+id/noraml2"
+             android:onClick="showHealthyPoop"
+             android:src="@drawable/normal3" />
+
+         <ImageButton
+             android:id="@+id/normal1"
+             android:layout_width="100dp"
+             android:layout_height="100dp"
+             android:layout_centerVertical="true"
+             android:layout_toLeftOf="@+id/noraml3"
+             android:onClick="showHealthyPoop"
+             android:src="@drawable/normal1" />
+
+         <ImageButton
+             android:id="@+id/abnormal1"
+             android:layout_width="100dp"
+             android:layout_height="100dp"
+             android:layout_alignTop="@+id/abnormal3"
+             android:layout_toLeftOf="@+id/abnormal3"
+             android:onClick="showUnhealthyPoop"
+             android:src="@drawable/abnormal1" />
+
+
+         <ImageButton
+             android:id="@+id/noraml2"
+             android:layout_width="100dp"
+             android:layout_height="100dp"
+             android:layout_above="@+id/noraml3"
+             android:layout_alignRight="@+id/textView1"
+             android:layout_marginRight="24dp"
+             android:onClick="showHealthyPoop"
+             android:src="@drawable/normal2" />
+
+         <ImageButton
+             android:id="@+id/abnormal3"
+             android:layout_width="100dp"
+             android:layout_height="100dp"
+             android:layout_below="@+id/normal1"
+             android:layout_toRightOf="@+id/normal1"
+             android:onClick="showUnhealthyPoop"
+             android:src="@drawable/abnormal3" />
+
+</RelativeLayout>

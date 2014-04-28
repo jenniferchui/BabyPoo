@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">BabyPoo</string>
+    <string name="welcome_message">Welcome to Baby Poo! Check your Baby\'s Poo with the two options below</string>
+    <string name="action_settings">Settings</string>
+    <string name="check_chart">Poop Chart</string>
+    <string name="match_photo">Poop Monitor</string>
+    <string name="title_activity_poop_chart">PoopChart</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="which_poop">Which poop matches your baby\'s poop?</string>
+    <string name="title_activity_healthy_poop">HealthyPoop</string>
+    <string name="healthy_poop">Healthy Poop!</string>
+    <string name="unhealthy_poop">Unhealthy Poop!</string>
+    <string name="take_picture">Take Picture!</string>
+    <string name="title_activity_unhealthy_poop">UnhealthyPoop</string>
+    <string name="title_activity_camera">Camera</string>
+
+</resources>

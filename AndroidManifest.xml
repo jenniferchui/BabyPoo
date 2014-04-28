@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.babypoo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+                     android:maxSdkVersion="18" />
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.babypoo.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.babypoo.PoopChart"
+            android:label="@string/title_activity_poop_chart"
+            android:parentActivityName="com.example.BabyPoo.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.BabyPoo.MainActivity" />
+        </activity>
+        <activity
+            android:name="com.example.babypoo.HealthyPoop"
+            android:label="@string/title_activity_healthy_poop"
+            android:parentActivityName="com.example.babypoo.PoopChart" >
+        </activity>
+        <activity
+            android:name="com.example.babypoo.UnhealthyPoop"
+            android:label="@string/title_activity_unhealthy_poop"
+            android:parentActivityName="com.example.babypoo.PoopChart" >
+        </activity>
+        <activity
+            android:name="com.example.babypoo.Camera"
+            android:label="@string/title_activity_camera" 
+            android:parentActivityName="com.example.BabyPoo.MainActivity" >
+        </activity>
+    </application>
+
+</manifest>
