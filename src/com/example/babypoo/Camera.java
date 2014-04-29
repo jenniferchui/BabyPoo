@@ -30,6 +30,18 @@ public class Camera extends ActionBarActivity {
 	private ImageView mImageView;
 	private Bitmap mImageBitmap;
 	
+	class PoopColor{
+		int[] colorRange;
+		int count;
+		int textID;
+		String name;
+	}
+	
+	
+	PoopColor white = new PoopColor();
+	PoopColor black = new PoopColor();
+	PoopColor brown = new PoopColor();
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +55,22 @@ public class Camera extends ActionBarActivity {
 			getSupportFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
+		
+		
+		white.colorRange = new int[] {0xf0f0f0};
+		white.count = 0;
+		white.textID = R.id.TotalWhite;
+		white.name = "white";
+		
+		black.colorRange = new int[] {0x000000, 0x000040};
+		black.count = 0;
+		black.textID = R.id.TotalBlack;
+		black.name = "black";
+		
+		brown.colorRange = new int[]  {0x400000, 0x800000, 0x804000,0x804040, 0xC08040 };
+		brown.count = 0;
+		brown.textID = R.id.TotalBrown;
+		brown.name = "brown";
 	}
 
 	@Override
