@@ -14,15 +14,6 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="96dp"
-        android:src="@drawable/abnormal3" />
-
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
@@ -32,5 +23,40 @@
         android:layout_marginTop="18dp"
         android:onClick="dispatchTakePictureIntent"
         android:text="@string/take_picture" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/button1"
+        android:src="@drawable/abnormal3" />
+
+    <TextView
+        android:id="@+id/TotalWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="26dp"
+        android:text="white" />
+
+    <TextView
+        android:id="@+id/TotalBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/TotalWhite"
+        android:layout_toRightOf="@+id/textView1"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/TotalBrown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TotalBlack"
+        android:layout_alignBottom="@+id/TotalBlack"
+        android:layout_marginLeft="36dp"
+        android:layout_toRightOf="@+id/button1"
+        android:text="TextView" />
 
 </RelativeLayout>
