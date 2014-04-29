@@ -165,6 +165,9 @@ public class Camera extends ActionBarActivity {
 	 * check for poop colour here 
 	 **/
 	private void handleSmallCameraPhoto(Intent intent) {
+		
+		PoopColor[] colors = new PoopColor[] {white, black, brown}; 
+		
 		Bundle extras = intent.getExtras();
 		mImageBitmap = (Bitmap) extras.get("data");
 		mImageView = (ImageView) findViewById(R.id.imageView1);
@@ -172,23 +175,46 @@ public class Camera extends ActionBarActivity {
 		mImageView.setVisibility(View.VISIBLE);
 		
 		TextView textView = (TextView) findViewById(R.id.textView1);
-		
+
 		HashMap<Integer, Integer> m = new HashMap<Integer, Integer>();
 		for(int x = 0; x < mImageBitmap.getWidth(); x++){
 			for(int y = 0; y < mImageBitmap.getHeight(); y++){
 				int currentColor = mImageBitmap.getPixel(x, y);
-				if( m.containsKey(currentColor) ){
-					m.put(currentColor, m.get(currentColor)+1);
+				
+				//reduce R, G, B by 64
+				int simpleColor = currentColor & 0x00c0c0c0; 
+				// Find color
+				boolean colorFound = false;
+				for(PoopColor c: colors){
+					for(int current : c.colorRange){
+						// found matching color
+						if( current == simpleColor){
+							c.count++;
+							colorFound = true;
+							break;
+						}
+					}
+					if(colorFound)
+						break;
+				}
+				
+				if( m.containsKey(simpleColor) ){
+					m.put(simpleColor, m.get(simpleColor)+1);
 				}
 				else{
-					m.put(currentColor, 1);
+					m.put(simpleColor, 1);
 				}		
 			}
 		}
-		
 		String message = "Height = " + mImageBitmap.getHeight() +"Width = " + mImageBitmap.getWidth() +"Mapsize = " + m.size();
+		 textView.setText(message);
 		// think about storage... hashmap? tree?
-	    textView.setText(message);
+		for(PoopColor c: colors){
+			textView = (TextView) findViewById(c.textID);
+			message = c.name+" = " + c.count;
+			textView.setText(message);
+		}
+	   
 
 	}
 
